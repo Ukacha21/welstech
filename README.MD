@@ -86,38 +86,38 @@ Mobile app is ready, just waiting to succedd connectiing to bluetooth with  the 
 ## Updates:
 * `WiFi or Bluetooth`: 
 
-    **Wifi**: We started with Wifi.h, the plan was to use wifi for faster information and data transfer. The biggest drawback was oled's sensitivity ti heat, it could stop working as expected after a while, it was affected for being too close the esp32 main board.  And the challenge here it manage the esp32's heat dissipassion which did not turn out as easy as it looked.
+**Wifi**: We started with Wifi.h, the plan was to use wifi for faster information and data transfer. The biggest drawback was oled's sensitivity ti heat, it could stop working as expected after a while, it was affected for being too close the esp32 main board.  And the challenge here it manage the esp32's heat dissipassion which did not turn out as easy as it looked.
 
-    **Bluetooth**: The alternative solution for this seemed to be switching to bluetooth. It's important to keep in mind that some esp board do not support `bluetooth classic` as it is in our case--ESP32S3-Zero, being Bluetooth Low Energy BLE. The most recommended BLE libraries are 
+**Bluetooth**: The alternative solution for this seemed to be switching to bluetooth. It's important to keep in mind that some esp board do not support `bluetooth classic` as it is in our case--ESP32S3-Zero, being Bluetooth Low Energy BLE. The most recommended BLE libraries are 
 
-    * NimBLE - Optimized for Wearables and compact devices -- third party lib.
-    * BLEServer - Built in llibrary that comes with espressif lib managger.
+* NimBLE - Optimized for Wearables and compact devices -- third party lib.
+* BLEServer - Built in llibrary that comes with espressif lib managger.
 
-    We tried NimBLE, we could upload the test code to the board successfuly, but it wouldn't broadcast, and thus, we could  find the board in the nearby BLE devices, after sca.
+We tried NimBLE, we could upload the test code to the board successfuly, but it wouldn't broadcast, and thus, we could  find the board in the nearby BLE devices, after sca.
 
-    So we swiched to BLEServer, we uploaded the test code successfully for BLEServer to our esp board, it does appear in the scanned nearby devices list, but somehow we're failing to connect.  I tried with `Redmi 12 Pro`, `Redmi 7 Pro` and `Samsung tab S7 FE`. The Xiaomis appear to try to connect, even tho unsuccessful, it appears in the list of paired devices. Samsung on the other hand, seems to be the most too the point, telling us exacly that it failed to connect.
+So we swiched to BLEServer, we uploaded the test code successfully for BLEServer to our esp board, it does appear in the scanned nearby devices list, but somehow we're failing to connect.  I tried with `Redmi 12 Pro`, `Redmi 7 Pro` and `Samsung tab S7 FE`. The Xiaomis appear to try to connect, even tho unsuccessful, it appears in the list of paired devices. Samsung on the other hand, seems to be the most too the point, telling us exacly that it failed to connect.
 
-    ### Solution?
+### Solution?
 
-    For now, the solution seems to be removing the display, and relying entirely on web based platforms to access the data, read and visualize.
+For now, the solution seems to be removing the display, and relying entirely on web based platforms to access the data, read and visualize.
 
-    Current plan is to completely redesign  the prototype and circuit element, remove the screen, buzzer had already been removed, still thinking about the action button. And keep the main board, sensor, and the prototype's cover, the case itself. 
+Current plan is to completely redesign  the prototype and circuit element, remove the screen, buzzer had already been removed, still thinking about the action button. And keep the main board, sensor, and the prototype's cover, the case itself. 
 
-    Step 2: Switch back to wifi, use telegram bot for communication, and see if we can integrate the bot's retrieved information into our welstech mobile flutter app. Remodel the prptptype's case to put some ventilation pathways to relief the heat amd help with heat dissipation.
+Step 2: Switch back to wifi, use telegram bot for communication, and see if we can integrate the bot's retrieved information into our welstech mobile flutter app. Remodel the prptptype's case to put some ventilation pathways to relief the heat amd help with heat dissipation.
 
 ## UPdates:
-    We are currently using ESP's wifi on access point mode, initialized hotspot from the esp board, coonnected to it from the browser, and typically we should be able to access any stremmed data from the browser using "192.168.4.1". And it worked.
+We are currently using ESP's wifi on access point mode, initialized hotspot from the esp board, coonnected to it from the browser, and typically we should be able to access any stremmed data from the browser using "192.168.4.1". And it worked.
 
 #### Sample test on http protocol:
 
 ![](images/browser.jpg)
 
-    Now tring to access it using socket from the flutter side, raised multiple errors. Soo instead or raw socket and/or tcp we just used http client and updated the dependecies in our pubspec.yaml.
+Now tring to access it using socket from the flutter side, raised multiple errors. Soo instead or raw socket and/or tcp we just used http client and updated the dependecies in our pubspec.yaml.
 
 
 ![](images/mobile3.jpg)
 
-    After some  reseaches i came to know that emulators do not allow raw http data for security reasons, so after each minor change, i would have to rebuild the apk file and try on a real mobile device. Now lets do that, best of luck.
+After some  reseaches i came to know that emulators do not allow raw http data for security reasons, so after each minor change, i would have to rebuild the apk file and try on a real mobile device. Now lets do that, best of luck.
 
 #### Sample test on http protocol:
 
@@ -125,9 +125,9 @@ Mobile app is ready, just waiting to succedd connectiing to bluetooth with  the 
 
 ![](images/mobile2.jpg)
 
-    And another thing, if we managed to get the data from the browser, we can now be sure to remove the screen, and now we can 3D print the smaller prototype with small holes to be used as vents.
+And another thing, if we managed to get the data from the browser, we can now be sure to remove the screen, and now we can 3D print the smaller prototype with small holes to be used as vents.
 
-    Now we successfully got the data on the mobile app, for now we just tried to show the analog value that the sensor returns as raw data, using readAnalog(). We did not calculate any BPM up until here:
+Now we successfully got the data on the mobile app, for now we just tried to show the analog value that the sensor returns as raw data, using readAnalog(). We did not calculate any BPM up until here:
 
 #### Data on flutter  app:
 
@@ -135,15 +135,15 @@ Mobile app is ready, just waiting to succedd connectiing to bluetooth with  the 
 
 ## UPdates: 
 
-    Project is successfull, now we can print the 3D prototype and improve the mobile side, to read the values every 10 seconds and return the estimate bpm.
+Project is successfull, now we can print the 3D prototype and improve the mobile side, to read the values every 10 seconds and return the estimate bpm.
 
-    One more thing, we still havent gotten the optimum threshold, this can only be done either by changing small values every time, or watching the peak changes closely from the mobile phone, http in the browser cannot update itself every second, that is something to be imlpemented in the mobile. to make requestas every half a second or 200 ms, to deect the optimum threshhold, and calculate bpm accordingly.
+One more thing, we still havent gotten the optimum threshold, this can only be done either by changing small values every time, or watching the peak changes closely from the mobile phone, http in the browser cannot update itself every second, that is something to be imlpemented in the mobile. to make requestas every half a second or 200 ms, to deect the optimum threshhold, and calculate bpm accordingly.
 
 ## UPdates: 
 
-    A mistake made by me, caused the deliver of the prototype to take longer than expected. 
+A mistake made by me, caused the deliver of the prototype to take longer than expected. 
 
-    Printed the 3D base, but came out larger than thought of. And the reason for that is, I had measured the diameter as 43mm, but when modeling the surpafecs on solidworks, I mistakenly put 43 as the radius, and it turned out larger than expected.
+Printed the 3D base, but came out larger than thought of. And the reason for that is, I had measured the diameter as 43mm, but when modeling the surpafecs on solidworks, I mistakenly put 43 as the radius, and it turned out larger than expected.
 
 #### Faulty Prototype:
 
@@ -154,7 +154,7 @@ Mobile app is ready, just waiting to succedd connectiing to bluetooth with  the 
 
 ![](images/faulty3.jpg)
 
-    While redesiging on Solidworks, we're basicaly just going to set the new sizes as half of the previous ones. e.g: 'instead of 43, use 43/2'. Taking its rescpective tolerances into consideration of coursse.
+While redesiging on Solidworks, we're basicaly just going to set the new sizes as half of the previous ones. e.g: 'instead of 43, use 43/2'. Taking its rescpective tolerances into consideration of coursse.
 
 ## UPdates: 
 
