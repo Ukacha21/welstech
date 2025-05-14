@@ -1,0 +1,69 @@
+------------------
+
+for each character on the screen
+
+Text Size	Width (pixels)	Height (pixels)
+1		5		7
+2		10		14
+3		15		21
+4		20		28
+5		25		35
+6		30		42
+7		35		49
+8		40		56
+9		45		63
+10		50		70
+
+
+--------------------------------
+
+Here's how the text size scales:
+Text size 1 (display.setTextSize(1)):
+
+    Character width: 5 pixels
+    Character height: 7 pixels
+
+Text size 2 (display.setTextSize(2)):
+
+    Character width: 10 pixels (5 * 2)
+    Character height: 14 pixels (7 * 2)
+
+Text size 3 (display.setTextSize(3)):
+
+    Character width: 15 pixels (5 * 3)
+    Character height: 21 pixels (7 * 3)
+
+Text size 4 (display.setTextSize(4)):
+
+    Character width: 20 pixels (5 * 4)
+    Character height: 28 pixels (7 * 4)
+
+Text size 5 (display.setTextSize(5)):
+
+    Character width: 25 pixels (5 * 5)
+    Character height: 35 pixels (7 * 5)
+
+Text size 6 (display.setTextSize(6)):
+
+    Character width: 30 pixels (5 * 6)
+    Character height: 42 pixels (7 * 6)
+
+Text size 7 (display.setTextSize(7)):
+
+    Character width: 35 pixels (5 * 7)
+    Character height: 49 pixels (7 * 7)
+
+Text size 8 (display.setTextSize(8)):
+
+    Character width: 40 pixels (5 * 8)
+    Character height: 56 pixels (7 * 8)
+
+Text size 9 (display.setTextSize(9)):
+
+    Character width: 45 pixels (5 * 9)
+    Character height: 63 pixels (7 * 9)
+
+Text size 10 (display.setTextSize(10)):
+
+    Character width: 50 pixels (5 * 10)
+    Character height: 70 pixels (7 * 10)
