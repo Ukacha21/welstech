@@ -1,0 +1,16 @@
+use the following to run on edge effectivelty
+
+	flutter run -d edge --verbose 
+or 
+	flutter run -d chrome --verbose 
+
+depending on the browser
+
+
+
+//clear everything, browser cache etc, before re-run, if failing:
+
+flutter clean
+flutter pub get
+flutter run -d edge
+

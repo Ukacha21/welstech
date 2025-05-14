@@ -1,0 +1,24 @@
+flutter build apk --build-name=1.0 --build-number=1 
+flutter build windows --release
+
+#build options
+--release / --debug
+
+
+#split for different versions
+--split-per-abi
+
+
+//currently used
+flutter build apk --release
+
+
+first do
+
+flutter clean
+flutter pub get
+
+//and then build to whatever target platform it is
+flutter build apk or windows --release
+
+//and sometimes run with verbosem if emulator fails
