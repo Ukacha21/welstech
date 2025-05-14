@@ -1,0 +1,124 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run -d edge
+
+## exception
+
+RPCError: ext.flutter.debugDumpFocusTree: (-32603) Unexpected DWDS error for callServiceExtension: Unexpected error from chrome devtools:
+text: Uncaught (in promise)
+exception:
+  preview: null
+  description: null
+  type: string
+  value: Unexpected null value.
+attempted JS eval: `require("dart_sdk").developer.invokeExtension(
+    "ext.flutter.debugDumpFocusTree", JSON.stringify({}));
+`
+
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:261:34)
+#1      VmService._call.<anonymous closure> (package:vm_service/src/vm_service.dart:1778:25)
+#2      VmService._call (package:vm_service/src/vm_service.dart:1790:8)
+#3      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:1729:14)
+#4      FlutterVmService._checkedCallServiceExtension (package:flutter_tools/src/vmservice.dart:874:28)
+#5      FlutterVmService.invokeFlutterExtensionRpcRaw (package:flutter_tools/src/vmservice.dart:894:49)
+#6      FlutterVmService.flutterDebugDumpFocusTree (package:flutter_tools/src/vmservice.dart:651:50)
+#7      ResidentHandlers.debugDumpFocusTree (package:flutter_tools/src/resident_runner.dart:776:53)
+<asynchronous suspension>
+#8      TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1836:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.24.3, on
+    Microsoft Windows [Version 10.0.26100.3775],
+    locale en-US)
+    [32m•[39m Flutter version 3.24.3 on channel stable
+      at C:\flutter sdk\flutter
+    [32m•[39m Upstream repository
+      https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 2663184aa7 (8 months
+      ago), 2024-09-11 16:27:48 -0500
+    [32m•[39m Engine revision 36335019a8
+    [32m•[39m Dart version 3.5.3
+    [32m•[39m DevTools version 2.37.3
+
+[32m[✓][39m Windows Version (Installed version of
+    Windows is version 10 or higher)
+
+[31m[✗][39m Android toolchain - develop for Android
+    devices
+    [31m✗[39m Unable to locate Android SDK.
+      Install Android Studio from:
+      https://developer.android.com/studio/index
+      .html
+      On first launch it will assist you in
+      installing the Android SDK components.
+      (or visit
+      https://flutter.dev/to/windows-android-set
+      up for detailed instructions).
+      If the Android SDK has been installed to a
+      custom location, please use
+      `flutter config --android-sdk` to update
+      to that location.
+
+
+[31m[✗][39m Chrome - develop for the web (Cannot find
+    Chrome executable at
+    .\Google\Chrome\Application\chrome.exe)
+    [33m![39m Cannot find Chrome. Try setting
+      CHROME_EXECUTABLE to a Chrome executable.
+
+[31m[✗][39m Visual Studio - develop Windows apps
+    [31m✗[39m Visual Studio not installed; this is
+      necessary to develop Windows apps.
+      Download at
+      https://visualstudio.microsoft.com/downloa
+      ds/.
+      Please install the "Desktop development
+      with C++" workload, including all of its
+      default components
+
+[33m[!][39m Android Studio (not installed)
+    [32m•[39m Android Studio not found; download from
+      https://developer.android.com/studio/index
+      .html
+      (or visit
+      https://flutter.dev/to/windows-android-set
+      up for detailed instructions).
+
+[32m[✓][39m VS Code (version 1.99.3)
+    [32m•[39m VS Code at
+      C:\Users\ukach\AppData\Local\Programs\Micr
+      osoft VS Code
+    [32m•[39m Flutter extension can be installed from:
+      🔨
+      https://marketplace.visualstudio.com/items
+      ?itemName=Dart-Code.flutter
+
+[32m[✓][39m VS Code (version 1.100.0-insider)
+    [32m•[39m VS Code at
+      C:\Users\ukach\AppData\Local\Programs\Micr
+      osoft VS Code Insiders
+    [32m•[39m Flutter extension version 3.109.20250401
+
+[32m[✓][39m Connected device (2 available)
+    [32m•[39m Windows (desktop) • windows • windows-x64
+      • Microsoft Windows [Version
+      10.0.26100.3775]
+    [32m•[39m Edge (web)        • edge    •
+      web-javascript • Microsoft Edge
+      135.0.3179.85
+
+[32m[✓][39m Network resources
+    [32m•[39m All expected network resources are
+      available.
+
+[33m![39m Doctor found issues in 4 categories.
+```
