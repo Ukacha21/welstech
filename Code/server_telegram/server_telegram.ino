@@ -4,12 +4,10 @@
 
 
 /*
-chat id: 
+chat id: <Your chat id>
 
-bot token: 
+bot token: <YOur Token>
 
-
-7758507333:AAH4GS7jPUqnyvRM8PfQG4lEsLF0paf-xb0
 
 
 
