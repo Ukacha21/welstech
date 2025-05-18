@@ -193,7 +193,7 @@ And here the average BPM results:
 
 Detailed Video on Youtube:
 
-[welstech video](https://www.youtube.com/)
+[welstech video](https://youtu.be/DE1oGRj5kBM?si=-mU4gTcb0TAKlGFt)
 
 ## What can be added or improved?
 
